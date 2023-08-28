@@ -1,0 +1,24 @@
+- hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+    - name: Create user
+      user:
+        name: "{{ item }}"
+        state: present
+        password: $6$UipCw4Vo$41BPhdMGXOMIHSgKvNaIoRM3mbc4GDRXhnHyjhN5sfaDjPbYygK86o7ZIXkTw4dzkk/7TUsRzBlQDmzrIRUyz0
+      with_items:
+        - pratikba
+        - diogofi
+        - vireshwaraha
+    - name: Ensure the ansible user is sudoer with no password required
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: ^{{ item }} ALL\=
+        line: "{{ item }} ALL=(root) NOPASSWD: ALL,!REBOOT,!VISUDO,!SUROOT"
+        validate: /usr/sbin/visudo -cf %s
+      with_items:
+        - pratikba
+        - diogofi
+        - vireshwaraha

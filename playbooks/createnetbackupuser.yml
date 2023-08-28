@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+  tasks:
+    - name: Create  Users
+      user:
+        name: netbackupuser 
+        password: $6$s85hbSL21AevdptN$TnCwwnj/qfpHFAfBhHGCzWvr30vd0hv5nibU4KVCK.GfEhdfcqV/zdUM2xJWItVamdcud4ecF4aakIL5OrQ9c.
+        shell: /bin/bash
+        state: present
+        home: /export/home/netbackupuser 
+    - name: Ensure the oracle user is sudoer with no password required
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^netbackupuser  ALL\='
+        line: 'netbackupuser  ALL=(ALL) NOPASSWD: ALL,!VISUDO,!REBOOT,!SUROOT'
+        validate: '/usr/sbin/visudo -cf %s'
