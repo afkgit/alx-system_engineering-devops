@@ -1,0 +1,11 @@
+- hosts: all
+  become: true
+  vars:
+    user_names:
+      - pratikba
+      - diogofi
+      - vireshwaraha      
+  tasks:
+    - name: Force Users to change passwd at first login
+      command: passwd -e "{{ item }}"
+      loop: "{{ user_names }}"

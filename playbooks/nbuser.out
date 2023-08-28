@@ -1,0 +1,47 @@
+
+PLAY [all] ******************************************************************************************************************************
+
+TASK [Gathering Facts] ******************************************************************************************************************
+ok: [ojowcapp005]
+ok: [ojowcapp001]
+ok: [ojowcapp003]
+ok: [ojowcapp004]
+ok: [ojowcapp002]
+ok: [ojowcapp008]
+ok: [ojowcapp007]
+ok: [ojowcapp009]
+ok: [ojowcapp006]
+
+TASK [Create  Users] ********************************************************************************************************************
+changed: [ojowcapp005]
+changed: [ojowcapp001]
+changed: [ojowcapp003]
+changed: [ojowcapp004]
+changed: [ojowcapp002]
+changed: [ojowcapp008]
+changed: [ojowcapp007]
+changed: [ojowcapp009]
+changed: [ojowcapp006]
+
+TASK [Ensure the oracle user is sudoer with no password required] ***********************************************************************
+changed: [ojowcapp005]
+changed: [ojowcapp001]
+changed: [ojowcapp003]
+changed: [ojowcapp004]
+changed: [ojowcapp002]
+changed: [ojowcapp008]
+changed: [ojowcapp007]
+changed: [ojowcapp006]
+changed: [ojowcapp009]
+
+PLAY RECAP ******************************************************************************************************************************
+ojowcapp001                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp002                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp003                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp004                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp005                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp006                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp007                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp008                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+ojowcapp009                : ok=3    changed=2    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+

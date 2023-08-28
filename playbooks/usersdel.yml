@@ -1,0 +1,14 @@
+- hosts: all
+  become: true
+  vars:
+    user_names:
+      - testuser1
+      - testuser2
+      - testuser3
+  tasks:
+    - name: Remove Users
+      user:
+        name: "{{ item }}"
+        state: absent
+        remove: true
+      loop: "{{ user_names }}"

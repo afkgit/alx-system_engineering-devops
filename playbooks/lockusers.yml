@@ -1,0 +1,72 @@
+- hosts: all
+  become: true
+  vars:
+    user_names:
+      - godsonan
+      - jeromee                 
+      - ekongw          
+      - koredee         
+      - kazeemol        
+      - simeonolad      
+      - sharma          
+      - raman           
+      - malekji         
+      - devenda         
+      - ankit           
+      - nikhil          
+      - ashwath         
+      - krishna         
+      - tulasi          
+      - daasops         
+      - adayyah         
+      - test_mtn        
+      - olatundeOla     
+      - kayode          
+      - hsamour         
+      - ajames          
+      - eagosu          
+      - ajawawdeh       
+      - YPSB_DAAS       
+      - melsheikh       
+      - lea_sadamson    
+      - lea_olatunji    
+      - lea_kayode      
+      - lea_naheem      
+      - lea_olorunsegun 
+      - lea_oazeez      
+      - lea_aokubadejo  
+      - lea_aogunmiloro 
+      - lea_bsamuel     
+      - lea_rolaleye    
+      - lea_oyeroto     
+      - lea_atheresa    
+      - lea_shadare     
+      - lea_olatunla    
+      - lea_sundayokol1 
+      - lea_nnekaeg     
+      - lea_chiamae     
+      - Stephen_Bello   
+      - atashuser       
+      - yhasan          
+      - bunmiak         
+      - rtamer          
+      - mdasouqi        
+      - dinegbedion     
+      - sbello          
+      - eessa           
+      - mhamdan         
+      - naira_t         
+      - mkashora        
+      - ayas            
+      - rayven_ng       
+      - momo_marcel     
+      - momo_samuel     
+      - tariq_n         
+      - Pranchatur      
+      - daas_mobad      
+      - ahamdan         
+      - afakunle
+  tasks:
+    - name: Lock Users
+      command: usermod -L "{{ item }}"
+      loop: "{{ user_names }}"

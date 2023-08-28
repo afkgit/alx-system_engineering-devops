@@ -1,0 +1,26 @@
+---
+- name: Ansible Create user functionlity module on BMC Helix
+  hosts: bmchelix_sol 
+  become: true
+  become_method: sudo
+  gather_facts: false
+  tasks:
+ # Creating the user bmchelix Security Scan and Internet Access to BMC Helix POV 
+    - name: Add the user 'bmchelix' with a specific uid and a primary group of 'sudo'
+      ansible.builtin.user:
+        name: bmchelix
+        password: $6$rounds=10000$7Vlihxd6$.IUo9Hi8zDk5pV7Lz3TgHGNwpnDi4LNZFHaOUyhOa1ulDcx5vPQEIkxH7blWKHx2.l0KDfLUsfi/aNcjseM.s0
+        comment: bmchelix
+        state: "present"
+        shell: "/bin/bash"
+        createhome: yes        
+        home: /export/home/bmchelix
+    - name: Ensure the  user is sudoer with no password required
+      lineinfile:
+       backup: true
+       dest: /etc/sudoers
+       state: present
+       line: '{{ item }} ALL=(ALL) NOPASSWD: ALL,!REBOOT,!VISUDO,!SUROOT'
+       validate: '/usr/sbin/visudo -cf %s'
+      with_items:
+       - bmchelix 

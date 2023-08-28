@@ -1,0 +1,11 @@
+[nbuser]
+ojowcapp005   ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp004  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp003  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp002  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp001  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp009     ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp008  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp007  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+ojowcapp006  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+
