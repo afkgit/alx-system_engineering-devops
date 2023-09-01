@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+  tasks:
+    - name: Refresh user password
+      user:
+        name: db_access_user
+        update_password: always
+        password: $6$pqxEKeq1$E1uS4j1GjJlWMi2Mg2a1JzOv/M5PQDQOCJsnTya/lX1eTfsfFAVVraocTljtiG9TSn.lc6pt3ZTgwpStDzDOJ0
+#        password: "{{ newpassword|password_hash('sha512') }}"
