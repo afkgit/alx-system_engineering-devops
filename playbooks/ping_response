@@ -1,0 +1,283 @@
+10.1.84.29 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ikctmdb03\n\n                                W A R N I N G\n\n         U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+-----------------------------------------------------------------------------+\n|                                                                             |\n|   If you proceed any further, you will be deemed bound by the company's     |\n|   rules for computer use. Copies of these rules can be obtained from        |\n|   the Information Systems department.                                       |\n|                                                                             |\n|   Any attempt at unauthorised access or modification of any computer        |\n|   material whatsoever is a criminal offence.                                |\n|                                                                             |\n|   If you wish to proceed, type in your User-name and Password.              |\n|                                                                             |\n|   If you wish to abandon the log-in, do nothing, and timeout will occur.    |\n|                                                                             |\n|   SST ENABLED - After 3 FAILED login attempts your login account will       |\n|                 be locked                                                   |\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ikctmdb03\n+-----------------------------------------------------------------------------+", 
+    "unreachable": true
+}
+10.1.208.136 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+10.5.206.74 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ojesfbstosb03\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ojesfbstosb03\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+172.16.113.41 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.16.113.41 port 22: Connection timed out", 
+    "unreachable": true
+}
+172.30.150.15 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.30.150.15 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.1 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.1 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.2 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.2 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.3 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.3 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.5 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.5 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.4 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.4 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.6 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.6 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.7 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.7 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.8 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.8 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.9 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.9 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.10 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.10 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.11 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.11 port 22: Connection timed out", 
+    "unreachable": true
+}
+172.30.149.51 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to 172.30.149.51 closed.\r\n", 
+    "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", 
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", 
+    "rc": 127
+}
+10.1.41.12 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.12 port 22: Connection timed out", 
+    "unreachable": true
+}
+172.16.111.196 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.16.111.196 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.153.11 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to 10.1.153.11 closed.\r\n", 
+    "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", 
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", 
+    "rc": 127
+}
+10.1.99.106 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to 10.1.99.106 closed.\r\n", 
+    "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", 
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", 
+    "rc": 127
+}
+172.30.149.52 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ojotmmaskgw01\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ojotmmaskgw01\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.42.204 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to 10.1.42.204 closed.\r\n", 
+    "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", 
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", 
+    "rc": 127
+}
+10.1.197.189 | SUCCESS => {
+    "changed": false, 
+    "ping": "pong"
+}
+10.1.98.245 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ikpsbmongodb01\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ikpsbmongodb01\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.86.238 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ojpsbarbiter01\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ojpsbarbiter01\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.86.237 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ojpsbmongodb01\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ojpsbmongodb01\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.41.162 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        vgctm01\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  vgctm01\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+172.30.149.19 | FAILED! => {
+    "changed": false, 
+    "module_stderr": "Shared connection to 172.30.149.19 closed.\r\n", 
+    "module_stdout": "/bin/sh: /usr/bin/python: No such file or directory\r\n", 
+    "msg": "The module failed to execute correctly, you probably need to set the interpreter.\nSee stdout/stderr for the exact error", 
+    "rc": 127
+}
+10.1.84.23 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password:  MTN Nigeria                       ikictwbsdb02 \n\n                                W A R N I N G\n\n         U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+-----------------------------------------------------------------------------+\n|                                                                             |\n|   If you proceed any further, you will be deemed bound by the company's     |\n|   rules for computer use. Copies of these rules can be obtained from        |\n|   the Information Systems department.                                       |\n|                                                                             |\n|   Any attempt at unauthorised access or modification of any computer        |\n|   material whatsoever is a criminal offence.                                |\n|                                                                             |\n|   If you wish to proceed, type in your User-name and Password.              |\n|                                                                             |\n|   If you wish to abandon the log-in, do nothing, and timeout will occur.    |\n|                                                                             | \n|   SST ENABLED - After 3 FAILED login attempts your login account will       |\n|                 be locked                                                   |\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ikictwbsdb02\n+-----------------------------------------------------------------------------+", 
+    "unreachable": true
+}
+10.1.41.163 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        vgctm02\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  vgctm02\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.84.107 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                       ikifsmtnf02\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ikifsmtnf02\n+-----------------------------------------------------------------------------+", 
+    "unreachable": true
+}
+10.1.84.22 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password:  MTN Nigeria                        ikictwbsdb03\n\n                                W A R N I N G\n\n         U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+-----------------------------------------------------------------------------+\n|                                                                             |\n|   If you proceed any further, you will be deemed bound by the company's     |\n|   rules for computer use. Copies of these rules can be obtained from        |\n|   the Information Systems department.                                       |\n|                                                                             |\n|   Any attempt at unauthorised access or modification of any computer        |\n|   material whatsoever is a criminal offence.                                |\n|                                                                             |\n|   If you wish to proceed, type in your User-name and Password.              |\n|                                                                             |\n|   If you wish to abandon the log-in, do nothing, and timeout will occur.    |\n|                                                                             | \n|   SST ENABLED - After 3 FAILED login attempts your login account will       |\n|                 be locked                                                   |\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ikictwbsdb03\n+-----------------------------------------------------------------------------+", 
+    "unreachable": true
+}
+172.16.111.197 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.16.111.197 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.99.103 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.99.103 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.99.102 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.99.102 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.98.167 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.167 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.98.173 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.173 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.98.175 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.175 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.98.168 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.168 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.98.172 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.172 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.154 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        VGDCBSUAT004\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  VGDCBSUAT004\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.41.155 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        VGDCBSUAT005\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  VGDCBSUAT005\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.98.174 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.98.174 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.151 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.151 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.157 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        VGDCBSUAT007\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  VGDCBSUAT007\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.41.152 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.152 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.153 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.153 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.156 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.156 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.158 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.158 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.1.41.159 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.159 port 22: Connection timed out", 
+    "unreachable": true
+}
+172.30.152.10 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Invalid/incorrect password: MTN Nigeria                        ojotaapp04\n\n                                 W A R N I N G\n\n           U N A U T H O R I S E D  A C C E S S  P R O H I B I T E D\n\n+##############################################################################+\n# # By logging in here, you agree to abide by the MTN information security     #\n#   policies, you will be deemed bound by the company's rules for computer use.#\n# # Logs are kept of all activities.                                           #\n# # The full policy document can be obtained from the Information              #\n#   Security department or on the corporate Intranet                           #\n# # The Basic rules are as follows below:                                      #\n#   * Ensure approval is obtained for all changes.                             #\n#   * Check your logs periodically to see if something strange happened.       #\n#   * Do not share user accounts, contact the service desk to get your own.    #\n#   * The account owner will be accountable for all activities.                #\n#   * Do your best to protect the privacy of our subscribers by reducing the   #\n#     authorization on files, database privileges, and critical operating      #\n#     system users.                                                            #\n#   * Do not run as root or SA, always use a role with lesser privileges.      #\n#   * Ensure you are logging in from a secure device by visiting               #\n#     https://browsercheck.qualys.com and fixing relevant issues.              #\n#   * Do not exchange or store passwords in plaintext,                         #\n#     Hash it, use encryption keys or use a password vault.                    #\n#   * Load your public key to make login faster and more secure.               #\n#     See https://goo.gl/gYSzM1 .                                              #\n#   * If you think that your password was compromised by a data breach         #\n#     or viruses,change it after ensuring your device is secure.               #\n#   * Ensure this system is kept secure by regularly patching, requesting      #\n#     a scan from your security team and fixing relevant issues timeously.     #\n# # Any attempt at unauthorised access or modification of any computer         #\n#   material whatsoever is a criminal offence.                                 #\n# # If you wish to proceed, type in your User#name and Password.               #\n# # If you wish to abandon the log#in, do nothing, and timeout will occur.     #\n# # SST ENABLED # After 3 FAILED login attempts your login account will        #\n#                                be locked                                     #\n+##############################################################################+\n+-----------------------------------------------------------------------------+\n                        T h i s   i s  ojotaapp04\n+-----------------------------------------------------------------------------+\nPermission denied, please try again.", 
+    "unreachable": true
+}
+10.1.41.160 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.1.41.160 port 22: Connection timed out", 
+    "unreachable": true
+}
+10.5.206.175 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 10.5.206.175 port 22: Connection timed out", 
+    "unreachable": true
+}
+172.16.8.20 | UNREACHABLE! => {
+    "changed": false, 
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 172.16.8.20 port 22: Connection timed out", 
+    "unreachable": true
+}

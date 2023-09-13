@@ -1,0 +1,40 @@
+---
+- name: playbook for simple 400 GB partition
+  hosts: all
+  become: true
+  become_method: sudo
+  tasks:
+    - name: create partition
+      command: /usr/sbin/parted /dev/sdc mklabel msdos mkpart primary "1 -1"
+    - name: task for creating volume group
+      lvg:
+          vg: vg_mysql
+          pvs: /dev/sdc1
+          state: present
+
+    - name: task for creating logical volume
+      lvol:
+          vg: vg_mysql
+          lv: lv_mysql
+          size: 200g
+          force: yes
+
+    - name: Create directory /mongos if does not exist
+      file:
+        path: /mysql
+        state: directory
+        mode: '0755'
+
+    - name: format with xfs filesystem
+      filesystem:
+        fstype: xfs
+        dev: /dev/vg_mysql/lv_mysql
+
+    - name: mount the lv on /mysql
+      mount:
+        path: /mysql
+        src: /dev/vg_mysql/lv_mysql
+        fstype: xfs
+        state: mounted
+...
+

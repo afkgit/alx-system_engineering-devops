@@ -15,7 +15,7 @@ for i in cred.readlines():
         print(ls)
         p.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         p.connect("%s"%ls[0],port =22, username = "%s"%ls[1], password="%s"%ls[2])
-        stdin, stdout, stderr = p.exec_command("cat /etc/system-release")
+        stdin, stdout, stderr = p.exec_command("uname -r")
         opt = stdout.readlines()
         opt ="".join(opt)
         print(opt)

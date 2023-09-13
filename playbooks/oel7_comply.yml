@@ -1,0 +1,662 @@
+---
+# Playbook to configure compliance on Linux Hosts
+
+- name: Playbook to configure compliance on Linux Hosts
+  hosts: all
+  user: breakg
+  become: True
+  become_method: sudo
+  ignore_errors: True
+  vars:
+    password: $6$nNBI4GtbT.1Nzrv2$gcsvjWtQlFYuaq6eryN46uAsFnc/3kxFDOM/j7yhg5vV7vtVMFpHpxx9Z6JNW8h.dO0aPa1utlfirfsX/gRC//
+    patrol_passwd: $6$OdKeKsQE$dg2.fUbheaGQk5L1lPDaUKfIi8oNpd50eAh8WB53nnv8Km0sGErEuxGsO3eIKVnnON3k8jsbu0nZfi9A4DMXh0
+    breakg_passwd: $6$nNBI4GtbT.1Nzrv2$gcsvjWtQlFYuaq6eryN46uAsFnc/3kxFDOM/j7yhg5vV7vtVMFpHpxx9Z6JNW8h.dO0aPa1utlfirfsX/gRC//
+    root_passwd: $6$kQ8U5y3CtGdC1AMN$Eq88G1bBR/6YsrIvHo5H/cq/EKyisXY1b41NEeGE1XZ/CbdSzy3rXeUbfBjqyC3Uor9z.CWGLh3eUhs4GpiC4/
+    rayven_ng_passwd: $6$i1om4HtF$5VfVdfwyGGaKz.mAWyKV4cX22E25KgIEzLsshuBPvFIdowfjbZyKWaraqUG1.m0rEwmJg1kFinf3xxgbQQs3q.
+    nntuser_passwd: $6$VJ9PzBKT$FPseQ2dsmhMsVgS6u1BEZAsp7kLkNmOQpT/8GPVTI3RtQ8qUjOL7HvU5qzWUXdnFAcyxkS1sHafPZaLPuB1Uu0
+    mtnlss_passwd: $6$rounds=10000$KIQcXc6w$xV718VBGxbpuEusmyUdGkvQYjvsycPk3FOIp9JxH2qdDMcn9zXOWMC9vtNXX36XLdKgAkH9VQTYs/A9eThgCP0
+    mtnlmu_passwd: $6$rounds=10000$IHvaHuEe$CGmUMiL9rNC8NlmZqh/e4N3UnjjQVbFfkaLoMxg6T0J1j0GT0jvFhEhzyQHq62pYPc3D7KU9Nbu9ucsSl7YYp/
+    mtnlma_passwd: $6$rounds=10000$hJlg9UPg$HrALp/VbIIoXKzDCWp4/ZUJadlSmWwD6rG46G1vFDBYJkL0gdolrS7MJ7kMy7AZHqqSfkbuyj2KOE.6ipYRw1/
+  tasks:
+  - name: Reset root and breakg accounts
+    raw: chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 breakg ; chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 root
+
+  - name: Set password ageing for users
+    raw: chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 mtnlss ; chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 mtnlmu ; chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 mtnlma ; chage -d `date '+%Y-%m-%d'` -M 365 -I -1 -W 28 -m 7 patrol 
+
+  - name: Install necessary package
+    yum:
+      name: '{{item}}'
+      state: latest
+    with_items:
+      - ntp
+      - net-snmp
+      - rpcbind
+      - openldap-clients
+
+  - name: Ensure unwanted packages are not installed
+    yum:
+      name: '{{item}}'
+      state: absent
+    with_items:
+      - xinetd
+      - xorg-x11-utils
+      - xorg-x11-xauth
+      - avahi-daemon
+      - cups
+      - openldap-servers
+      - bind
+      - vsftpd
+      - httpd
+      - telnet-server
+      - squid
+      - ypserv
+      - nfs-server
+      - rsync
+      - ypbind
+      - rsh-server
+      - talk
+      - telnet
+
+  - name: uninstall existing puppet agent for Linux
+    shell: /opt/puppetlabs/bin/puppet-enterprise-uninstaller -dpy
+
+  - name: Regularize Sysconfig file
+    copy: 
+      src: /export/home/breakg/Ansible/harden_file/{{item}}
+      dest: /etc/sysconfig/{{item}}
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+    with_items:
+      - authconfig
+      - selinux
+      - ntpd
+      - chronyd
+
+  - name: Create Crontab entry for root user
+    cron: 
+      name: '--check'
+      minute: '0'
+      hour: '5'
+      job: '/usr/sbin/aide --check'
+      state: present
+      user: root
+
+  - name: Configure logrotate
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/syslog
+      dest: /etc/logrotate.d/
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Update pwquality file
+    copy: 
+      src: /export/home/breakg/Ansible/harden_file/pwquality.conf
+      dest: /etc/security/
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Update system-auth and password-auth
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/{{item}}
+      dest: /etc/pam.d/{{item}}
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+    with_items:
+      - system-auth
+      - password-auth
+      - su
+      - password-auth-ac
+      - system-auth-ac
+
+  - name: copy screensaver conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/screensaver
+      dest: /etc/dconf/db/local.d/locks/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: copy yum conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/yum.conf
+      dest: /etc/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: install dracut-fips linux
+    yum:
+      name: dracut-fips
+      state: latest
+
+  - name: configure dracuts for Linux
+    shell: /usr/sbin/dracut -f
+
+  - name: copy grub conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/grub
+      dest: /etc/default/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: install pam_pkcs11 linux
+    yum:
+      name: pam_pkcs11
+      state: latest
+
+  - name: copy pam_pkcs11 conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/pam_pkcs11.conf
+      dest: /etc/pam_pkcs11/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: copy pam_pkcs11 conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/pkcs11_eventmgr.conf
+      dest: /etc/pam_pkcs11/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: Update Auditd
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/auditd.conf
+      dest: /etc/audit/auditd.conf
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Update Syslog.conf
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/syslog.conf
+      dest: /etc/audisp/plugins.d/syslog.conf
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: copy audit rules file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/audit.rules
+      dest: /etc/audit/rules.d/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: Configure auditd service for Linux
+    shell: /usr/sbin/auditctl -w /bin/sudo -p a -k privileged
+
+  - name: Reload auditd service for Linux
+    shell: /usr/sbin/service auditd reload
+
+  - name: Restart auditd service for Linux
+    shell: /usr/sbin/service auditd restart
+
+  - name: copy security limits conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/limits.conf
+      dest: /etc/security/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: configuring postfix hardening for Linux
+    shell: /usr/sbin/postconf -e 'smtpd_client_restrictions = permit_mynetworks,reject'
+
+  - name: Create /net directory 
+    file:
+      path: '{{ item }}'
+      state: directory
+    ignore_errors: yes
+    with_items:
+      - /net
+      - /cgroup
+
+  - name: Update Useradd
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/useradd
+      dest: /etc/default/useradd
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: copy journald conf file for linux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/journald.conf
+      dest: /etc/systemd/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: Copy Policy configuration files
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/{{item}}
+      dest: /etc/{{item}}
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+    with_items:
+      - rsyslog.conf
+      - sudoers
+      - login.defs
+      - ntp.conf
+      - chrony.conf
+      - logrotate.conf
+      - issue
+      - kdump.conf
+      - bashrc
+      - crontab
+      - profile
+      - sysctl.conf
+      - aide.conf
+
+  - name: Add entry CIS.conf to etc_modprobe
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/CIS.conf
+      dest: /etc/modprobe.d/CIS.conf
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Copy standard sshd config file
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/sshd_config
+      dest: /etc/ssh/sshd_config
+      mode: 0600
+      owner: root
+      group: root
+      backup: yes
+
+  - name: Copy sssd config file
+    copy: 
+      src: /export/home/breakg/Ansible/harden_file/sssd.conf
+      dest: /etc/sssd/sssd.conf
+      owner: root
+      group: root
+      mode: 0600
+      backup: yes
+
+#  - name: Configure LDAP
+#    raw: 
+#      /usr/sbin/authconfig --ldapserver=ldap://ojouddc01.mtn.com.ng,ojouddc02.mtn.com.ng/ --ldapbasedn="dc=mtn,dc=com,dc=ng" --enableldap --enableshadow --enableldapauth --enablesssdauth --enablesssd --enableforcelegacy --enablemd5 --updateall;firewall-cmd --permanent --zone=trusted --add-interface=lo 
+
+#  - name: Update issue Banner
+#    raw:
+#      var1=$(hostname);sed -e "s/hostname/$var1/g" /etc/issue > /etc/issue1;mv /etc/issue1 /etc/issue
+
+  - name: Update Autofs Config
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/{{item}}
+      dest: /etc/{{item}}
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+    with_items:
+      - auto.master
+      - auto.home
+
+  - name: Add GDM file to system
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/gdm
+      dest: /etc/dconf/profile/gdm
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Copy Selinux
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/config
+      dest: /etc/selinux/config
+      owner: root
+      group: root
+      mode: 0644
+      backup: yes
+
+  - name: Create Compliance required files(cron.allow, at.allow, user.cfg)
+    file:
+      path: '{{ item }}'
+      state: touch
+      mode: 0600
+    with_items:
+      - /boot/grub2/user.cfg
+      - /etc/cron.allow
+      - /etc/at.allow
+
+  - name: Set Directory and file permissions
+    file: 
+      path: '{{ item }}'
+      owner: root
+      group: root
+      mode: 0600
+    with_items:
+      - /boot/grub2/user.cfg
+      - /etc/crontab
+      - /etc/cron.hourly/
+      - /etc/cron.daily/
+      - /etc/cron.weekly/
+      - /etc/cron.monthly/
+      - /etc/cron.d/
+      - /etc/cron.allow
+      - /etc/at.allow
+
+  - name: Remove unwanted files
+    file: 
+      path: '{{ item }}'
+      state: absent
+    with_items:
+      - /etc/at.deny
+      - /etc/cron.deny
+
+  - name: Copy GDM Banner messages
+    copy: 
+      src: /export/home/breakg/Ansible/harden_file/01-banner-message
+      dest: /etc/dconf/db/gdm.d/
+      owner: root
+      group: root
+      mode: 0600
+      backup: yes
+
+  - name: Regularize Root Account and breakg Account
+    raw:
+      chage -I -1 -M 365 -m 7 -W 28 -d `date '+%Y-%m-%d'` root ; chage -I -1 -M 365 -m 7 -W 28 -d `date '+%Y-%m-%d'` breakg ; cp /etc/issue /etc/issue.net
+
+  - name: Update Limit file
+    pam_limits:
+      domain: '*'
+      limit_type: hard
+      limit_item: core
+      value: 0
+      backup: yes
+
+#  - name: Update Grub menu
+#    lineinfile:
+#      path: /etc/default/grub
+#      state: present
+#      regexp: '^GRUB_CMDLINE_LINUX=audit=1 '
+#      line: GRUB_CMDLINE_LINUX="audit=1"
+
+  - name: Rebuild Grub
+    raw:
+      grub2-mkconfig -o /boot/grub2/grub.cfg;mount -o remount,nodev,nosuid,noexec /dev/shm; chmod og-rwx /boot/grub2/grub.cfg;chmod 600 /etc/cron.*
+
+  - name: Configure syslog-ng
+    file:
+      path: /var/log/syslog-ng/
+      state: directory
+      mode: 0755
+      owner: root
+      group: root
+
+  - name: Create Log file
+    file: 
+      path: /var/log/syslog-ng/logs.txt
+      state: touch
+      mode: 0600
+      owner: root
+      group: root
+
+  - name: Setup configuration file
+    copy:
+      src: /export/home/breakg/Ansible/harden_file/syslog-ng.conf
+      dest: /etc/syslog-ng/
+      mode: 0644
+      owner: root
+      group: root
+      backup: yes
+
+  - name: Restart Services
+    service:
+      name: '{{ item }}'
+      state: restarted
+      enabled: yes
+    with_items:
+      - sshd
+      - ntpd
+      - rsyslog
+      - snmpd
+      - kdump
+      - oswatcher
+      - syslog-ng
+
+  - name: restart the auditd service
+    shell: 
+      /usr/sbin/service auditd restart
+
+  - name: run the load the augenrules
+    shell: 
+      /usr/sbin/augenrules --load
+    register: augenrules
+  - debug: var=augenrules.stdout_lines
+   
+  - name: Disable SSSD,LDAP,AUTOFS
+    service:
+      name: '{{ item }}'
+      state: stopped
+      enabled: no
+    with_items:
+      - sssd
+      - autofs
+
+  - name: create group
+    group:
+      name: qualysuser
+      state: present
+
+  - name: Ensure qualysuser user exists
+    user:
+      name: qualysuser
+      state: present
+      comment: 'qualys account'
+      group: qualysuser
+      home: /export/home/qualysuser
+      shell: /bin/bash
+      password_lock: false
+      generate_ssh_key: yes
+      ssh_key_bits: 2048
+      ssh_key_file: .ssh/id_rsa
+      expires: -1
+
+  - name: Ensure the qualysuser user is sudoer with no password required
+    lineinfile:
+      dest: /etc/sudoers
+      state: present
+      regexp: '^qualysuser ALL\='
+      line: 'qualysuser ALL=(ALL) NOPASSWD:ALL,REBOOT,!VISUDO'
+      validate: '/usr/sbin/visudo -cf %s'
+
+  - name: confirm .ssh directory if not created create it
+    file:
+     path: /export/home/qualysuser/.ssh
+     state: directory
+     mode: 0700
+     owner: qualysuser
+     group: qualysuser
+
+  - name: copy authorised keys for linux
+    copy:
+      src: /var/tmp/linux-file/authorized_keys
+      dest: /export/home/qualysuser/.ssh/
+      mode: 0600
+      owner: qualysuser
+      group: qualysuser
+    when: ansible_os_family == "RedHat"
+
+  - name: copy authorised keys for linux
+    copy:
+      src: /var/tmp/linux-file/authorized_keys2
+      dest: /export/home/qualysuser/.ssh/
+      mode: 0600
+      owner: qualysuser
+      group: qualysuser
+    when: ansible_os_family == "RedHat"
+
+  - name: install falcon-sensor linux
+    yum:
+      name: falcon-sensor
+      state: latest
+
+  - name: configure falcon for Linux
+    shell: /opt/CrowdStrike/falconctl -fs --cid=269510BBC6CF46F78713D8E81EA1D9BD-F9 --tags="Nigeria_Opco" --aph=10.1.178.150 --app=8080 --apd=FALSE
+
+  - name: start and enable falcon-sensor
+    service:
+      name: falcon-sensor
+      state: started
+      enabled: yes
+
+  - name: copy ntp conf file for linux
+    copy:
+      src: /var/tmp/linux-file/ntp.conf
+      dest: /etc/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: copy step-tickers file for linux
+    copy:
+      src: /var/tmp/linux-file/step-tickers
+      dest: /etc/ntp/
+      mode: 0644
+      owner: root
+      group: root
+      force: yes
+      backup: yes
+    when: ansible_os_family == "RedHat"
+
+  - name: Restart ntpd services
+    service:
+      name: ntpd
+      state: restarted
+      enabled: yes
+
+  - name: Synchronise time with ntp
+    command: /usr/sbin/ntpdate -u 10.1.226.76
+
+  - name: Install puppet agent
+    shell: /usr/bin/curl -k https://ikpuppet01.mtn.com.ng:8140/packages/current/install.bash | sudo bash
+
+  - name: Update all log permissions
+    raw:
+      /bin/find /var/log -type f -exec chmod g-wx,o-rwx {} +
+################################################################################################
+#  - name: Configure locahost iptables
+#    raw:
+#      /usr/sbin/iptables -A INPUT -i lo -j ACCEPT;/usr/sbin/iptables -A OUTPUT -o lo -j ACCEPT;/usr/sbin/iptables -A INPUT -s 127.0.0.0/8 -j DROP;/usr/sbin/iptables-save > /etc/sysconfig/iptables
+
+#  - name: Copy /tmp/ config file
+#    copy:
+#      src: /export/home/breakg/Ansible/harden_file/tmp.mount
+#      dest: /etc/systemd/system/local-fs.target.wants/tmp.mount
+#      owner: root
+#      group: root
+#      backup: yes
+
+#  - name: Set up tmp mount options
+#    mount:
+#      path: /tmp
+#      src: /dev/mapper/rhel8-tmp
+#      fstype: xfs
+#      state: mounted
+#      opts: rw,nosuid,noexec,nodev,relatime
+#      backup: yes
+
+#  - name: Set up /var/tmp mount options
+#    mount:
+#      path: /var/tmp
+#      src: /dev/mapper/rhel8-var_tmp
+#      fstype: xfs
+#      state: mounted
+#      opts: rw,nosuid,noexec,nodev,relatime
+#      backup: yes
+
+#  - name: Configure Proxy
+#    raw:
+#      export http_proxy="http://10.1.178.147:8080";export https_proxy="http://10.1.178.147:8080"      
+
+#  - name: Update the host(OEL Only)
+#    yum: 
+#      name: *
+#      state: latest
+ 
+#  - name: Install required packages
+#    yum:
+#      name: {{item}}
+#      state: present
+#      with_items:
+#        - hyperv-daemons
+#        - hyperv-daemons-license
+#        - hypervfcopyd
+#        - hypervkvpd
+#        - hypervvssd
+#        - deltarpm
+#        - autofs
+#        - aide
+#        - oswatcher
+#        - rpcbind
+#        - nfs-utils
+#        - openldap-clients
+#        - nss-pam-ldapd
+#       - sssd
+#       - sssd-client
+#        - ntp
+#        - iptables
+#        - sg3_utils
+#        - ksh
+#        - libaio-devel
+#        - xorg-x11-utils
+#        - xterm
+#        - xorg-x11-xauth
+#        - gnome-clocks
+#        - net-snmp
+#        - net-snmp-utils
+#        - net-snmp-libs
+#        - net-snmp-devel
+#        - syslog-ng
+#        - expect
+
+

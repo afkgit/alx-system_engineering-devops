@@ -1,0 +1,22 @@
+---
+- hosts: all
+  become: true
+  become_method: sudo
+  vars:
+    ansible_python_interpreter: /usr/bin/python
+  tasks:
+    - name: Create patrol user
+      user:
+        command: passwd -u patrol
+        name: patrol 
+        password: $6$OdKeKsQE$dg2.fUbheaGQk5L1lPDaUKfIi8oNpd50eAh8WB53nnv8Km0sGErEuxGsO3eIKVnnON3k8jsbu0nZfi9A4DMXh0
+        shell: /bin/bash
+        state: present
+        home: /export/home/patrol
+    - name: Ensure the patrol user is sudoer with no password required
+      lineinfile:
+        dest: /etc/sudoers
+        state: present
+        regexp: '^patrol  ALL\='
+        line: 'patrol  ALL=(ALL) NOPASSWD: ALL,!VISUDO,!REBOOT,!SUROOT,/usr/sbin/dmidecode'
+        validate: '/usr/sbin/visudo -cf %s'

@@ -1,2 +1,5 @@
 [bmchelix_sol]
-ojposdb03   ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+#10.1.153.62  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+#10.1.153.63  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+10.1.153.64  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
+10.1.153.65  ansible_connection=ssh  ansible_user=breakg  ansible_password=X!clusiveBr3@k
